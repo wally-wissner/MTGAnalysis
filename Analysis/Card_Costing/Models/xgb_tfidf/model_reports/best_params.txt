@@ -1,0 +1,1 @@
+{'features__nlp__tfidf__max_df': 0.25, 'features__nlp__tfidf__min_df': 16, 'xgb__learning_rate': 0.25, 'xgb__max_depth': 7, 'xgb__n_estimators': 50, 'xgb__reg_alpha': 0.5, 'xgb__reg_lambda': 8}

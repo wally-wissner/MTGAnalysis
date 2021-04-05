@@ -1,0 +1,1 @@
+{'features__nlp__tfidf__max_df': 0.5, 'features__nlp__tfidf__min_df': 20, 'features__nlp__tfidf__norm': 'l2', 'features__nlp__tfidf__sublinear_tf': True, 'rf__max_depth': 20, 'rf__min_samples_split': 2}

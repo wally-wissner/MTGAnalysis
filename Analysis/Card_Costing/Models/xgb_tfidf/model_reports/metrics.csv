@@ -1,0 +1,10 @@
+metric,train_avg,train_std,test_avg,test_std
+neg_mae,-0.705,0.005,-0.824,0.011
+neg_mae_creature,-0.587,0.002,-0.703,0.007
+neg_mae_noncreature,-0.855,0.005,-0.978,0.011
+neg_mdae,-0.56,0.003,-0.662,0.009
+neg_mdae_creature,-0.479,0.001,-0.569,0.003
+neg_mdae_noncreature,-0.695,0.01,-0.81,0.017
+r2,0.697,0.002,0.585,0.003
+r2_creature,0.799,0.005,0.701,0.011
+r2_noncreature,0.527,0.008,0.385,0.015
