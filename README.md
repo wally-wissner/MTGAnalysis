@@ -1,0 +1,1 @@
+This is a collection of small projects centered around analyzing Magic: the Gathering cards.

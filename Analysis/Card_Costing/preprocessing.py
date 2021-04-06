@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
-import re
 import sys
 
 from Conn import conn_mtg
+from Utilities.tokenize_cardtext import tokenize
 
 
 def to_int(text):
@@ -13,41 +13,7 @@ def to_int(text):
         return -1
 
 
-def tokenize(text, cardname, atomic_mana_symbols=False, atomic_power_toughness=False):
-    if not text:
-        return ""
-
-    # Create a token for card self-reference: cardname.
-    legendname = cardname.split(",")[0]
-    text = text.replace(cardname, "cardname")
-    text = text.replace(legendname, "cardname")
-
-    text = text.lower()
-
-    # Create newline character.
-    text = text.replace("\n", "&")
-
-    # Separate mana symbols.
-    text = text.replace("}{", "} {")
-    text = text.replace("][", "] [")
-
-    # Remove non-semantic characters.
-    for ch in "•−—,;":
-        text = text.replace(ch, " ")
-
-    semantic_chars = ".:&()+-/{}[]"
-    padding_chars = ".:&()" + ("" if atomic_power_toughness else "+-/") + ("" if atomic_mana_symbols else "{}[]")
-
-    for ch in padding_chars:
-        text = text.replace(ch, f" {ch} ")
-
-    text = "".join(ch for ch in text if ch.isalnum() or ch in " '" + semantic_chars)
-    text = re.sub('\s+', ' ', text)
-
-    return text
-
-
-def get_df():
+def get_df(use_rarity=False):
     df = conn_mtg.request(conn_mtg.open_query(sys.path[1] + "/Analysis/Card_Costing/Queries/card_properties.sql"))
 
     df["releaseDate"] = pd.to_datetime(df["releaseDate"])
@@ -75,17 +41,24 @@ def get_df():
             df[f"{col}_{value}"] = df[col].apply(lambda x: any(i in value for i in x)).astype(int)
         df = df.drop(col, axis=1)
 
-    # df["rarity_mythic"] = (df["rarity"] == "mythic")
-    # df["rarity_rare"] = (df["rarity"] == "rare") | df["rarity_mythic"]
-    # df["rarity_uncommon"] = (df["rarity"] == "uncommon") | df["rarity_rare"]
-    # df["rarity_common"] = (df["rarity"] == "common") | df["rarity_uncommon"]
-    # for col in df.columns:
-    #     if "rarity_" in col:
-    #         df[col] = df[col].astype(int)
+    if use_rarity:
+        df["rarity_mythic"] = (df["rarity"] == "mythic")
+        df["rarity_rare"] = (df["rarity"] == "rare") | df["rarity_mythic"]
+        df["rarity_uncommon"] = (df["rarity"] == "uncommon") | df["rarity_rare"]
+        df["rarity_common"] = (df["rarity"] == "common") | df["rarity_uncommon"]
+        for col in df.columns:
+            if "rarity_" in col:
+                df[col] = df[col].astype(int)
     df = df.drop("rarity", axis=1)
 
     df["text"] = df.apply(
-        lambda row: tokenize(row["text"], row["name"], atomic_mana_symbols=True, atomic_power_toughness=True), axis=1
+        lambda row: tokenize(
+            text=row["text"],
+            cardname=row["name"],
+            reminder_text=True,
+            atomic_mana_symbols=True,
+            atomic_power_toughness=True,
+        ), axis=1
     )
 
     df["n_words"] = df["text"].apply(lambda x: len(x.split()))
