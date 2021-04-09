@@ -58,6 +58,7 @@ def get_df(use_rarity=False):
             reminder_text=True,
             atomic_mana_symbols=True,
             atomic_power_toughness=True,
+            include_end_token=False,
         ), axis=1
     )
 
