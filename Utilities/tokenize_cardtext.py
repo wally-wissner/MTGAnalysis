@@ -9,7 +9,7 @@ def tokenize(text, cardname, reminder_text=False, atomic_mana_symbols=False, ato
     if not text:
         return ""
 
-    # Create a token for card self-reference: cardname.
+    # Create a token for card self-referencing.
     text = text.replace(cardname, cardname_token)
     # Handle legend epithets.
     for epithet_delimiter in [
@@ -19,8 +19,6 @@ def tokenize(text, cardname, reminder_text=False, atomic_mana_symbols=False, ato
     ]:
         legendname = cardname.split(epithet_delimiter)[0]
         text = text.replace(legendname, cardname_token)
-
-    text = text.replace(f"{cardname_token}'s", cardname_token)
 
     text = text.lower()
 
@@ -35,10 +33,6 @@ def tokenize(text, cardname, reminder_text=False, atomic_mana_symbols=False, ato
     text = text.replace("}{", "} {")
     text = text.replace("][", "] [")
 
-    # Remove non-semantic characters.
-    for ch in "•−—,;":
-        text = text.replace(ch, " ")
-
     semantic_chars = r".:()+-/{}[]" + cardname_token + newline_token + end_token
     padding_chars = r".:()" \
         + newline_token \
@@ -51,7 +45,10 @@ def tokenize(text, cardname, reminder_text=False, atomic_mana_symbols=False, ato
     if include_end_token:
         text = text + f" {end_token}"
 
+    # Remove non-semantic characters.
     text = "".join(ch for ch in text if ch.isalnum() or ch in " '" + semantic_chars)
+
+    # Remove duplicated whitespace.
     text = re.sub(r'\s+', ' ', text)
 
     text = text.strip()
