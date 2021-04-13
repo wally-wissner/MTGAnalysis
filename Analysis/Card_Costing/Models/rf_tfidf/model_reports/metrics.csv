@@ -1,4 +1,4 @@
-metric,train_avg,train_std,test_avg,test_std
+metric,mean_train,std_train,mean_test,std_test
 neg_mae,-0.564,0.006,-0.818,0.009
 neg_mae_creature,-0.41,0.009,-0.697,0.004
 neg_mae_noncreature,-0.759,0.01,-0.972,0.008

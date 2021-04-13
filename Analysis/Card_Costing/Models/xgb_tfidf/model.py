@@ -77,7 +77,7 @@ search = report(
     ivs=ivs,
     pipeline=pipeline,
     param_grid=param_grid,
-    rebuild_model=True,
+    rebuild_model=False,
     n_splits=3,
 )
 m = search.best_estimator_

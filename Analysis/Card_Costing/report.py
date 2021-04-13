@@ -7,6 +7,8 @@ from eli5 import explain_weights_df
 from sklearn.metrics import make_scorer, mean_absolute_error, median_absolute_error, r2_score
 from sklearn.model_selection import GridSearchCV
 
+from Utilities.metrics_report import metrics_report
+
 
 def make_filtered_scorer(df, metric, filter, greater_is_better, axis=1):
     filtered = df.apply(filter, axis=axis)
@@ -81,28 +83,7 @@ def report(df, dv, ivs, pipeline, param_grid, rebuild_model, n_jobs=1, n_splits=
     with open(f"{report_path}/best_params.txt", 'w+') as f:
         f.write(str(search.best_params_))
 
-    df_metrics = pd.DataFrame(columns=["metric", "train_avg", "train_std", "test_avg", "test_std"])
-    for metric in sorted(scorers.keys()):
-        metrics = {}
-        for t in ["train", "test"]:
-            _mean = np.mean([
-                search.cv_results_[f"split{split}_{t}_{metric}"][search.best_index_]
-                for split in range(n_splits)
-            ])
-            _std = np.std([
-                search.cv_results_[f"split{split}_{t}_{metric}"][search.best_index_]
-                for split in range(n_splits)
-            ])
-            metrics[f"{t}_avg"] = _mean
-            metrics[f"{t}_std"] = _std
-        df_metrics = df_metrics.append({
-            "metric": metric,
-            "train_avg": metrics["train_avg"],
-            "train_std": metrics["train_std"],
-            "test_avg": metrics["test_avg"],
-            "test_std": metrics["test_std"],
-        }, ignore_index=True)
-
+    df_metrics = metrics_report(search)
     df_metrics.round(3).to_csv(f"{report_path}/metrics.csv", index=False)
 
     explain_weights_df(m).round(3).to_csv(f"{report_path}/eli5_explanation.csv", index=False)
