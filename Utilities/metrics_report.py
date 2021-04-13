@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def metrics_report(search):
-    measures = ["mean_train", "std_train", "mean_test", "std_test"]
+    measures = (["mean_train", "std_train"] if search.return_train_score else []) + ["mean_test", "std_test"]
     report_cols = ["metric"] + measures
     df_metrics = pd.DataFrame(columns=report_cols)
 
