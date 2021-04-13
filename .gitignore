@@ -1,7 +1,14 @@
+# Local versioning and settings
 .DS_Store
-**/__pycache__
-**/pipeline_cache
+.ipython_checkpoints
+__pycache__/
 *.idea
 *.pyc
+
+# Data files
 *.sqlite
 *.zip
+
+# Model pipeline cache
+pipeline_cache/
+search.pickle
