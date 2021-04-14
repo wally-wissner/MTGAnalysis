@@ -1,4 +1,5 @@
 import dill as pickle
+import json
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -70,7 +71,6 @@ def report(df, dv, ivs, pipeline, param_grid, rebuild_model, n_jobs=1, n_splits=
             pickle.dump(search.best_estimator_, f)
         print("Model pickled.")
 
-
     # Load pickled model.
     with open(search_filename, 'rb') as f:
         search = pickle.load(f)
@@ -80,8 +80,8 @@ def report(df, dv, ivs, pipeline, param_grid, rebuild_model, n_jobs=1, n_splits=
     if not os.path.exists(report_path):
         os.makedirs(report_path)
 
-    with open(f"{report_path}/best_params.txt", 'w+') as f:
-        f.write(str(search.best_params_))
+    with open(f"{report_path}/best_params.json", 'w+') as f:
+        json.dump(search.best_params_, f)
 
     df_metrics = metrics_report(search)
     df_metrics.round(3).to_csv(f"{report_path}/metrics.csv", index=False)
