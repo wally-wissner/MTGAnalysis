@@ -58,7 +58,6 @@ pipeline = Pipeline(steps=[
     ])),
     ("rf", RandomForestRegressor()),
 ], memory=pipeline_cache)
-rmtree(pipeline_cache)
 
 
 param_grid = {
@@ -83,3 +82,4 @@ search = report(
     n_splits=3,
 )
 m = search.best_estimator_
+rmtree(pipeline_cache)
