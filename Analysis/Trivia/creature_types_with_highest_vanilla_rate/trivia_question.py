@@ -49,4 +49,4 @@ DESC
 df_vanilla = pandasql.sqldf(query=query_vanilla, env=locals())
 df_vanilla["frac_vanilla"] = df_vanilla["frac_vanilla"].round(4)
 
-print(reddit_table_markdown(df_vanilla))
+df_vanilla.to_markdown("result.md")

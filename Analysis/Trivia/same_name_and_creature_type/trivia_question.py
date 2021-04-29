@@ -38,4 +38,4 @@ df = df[["name", "subtypes", "same_order"]]
 print(df.shape)
 print(df[~df["same_order"]].shape)
 
-print(reddit_table_markdown(df, index=False))
+df.to_markdown("result.md")

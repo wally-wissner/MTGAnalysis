@@ -2,6 +2,7 @@
 
 
 import Levenshtein
+import pandas as pd
 from tqdm import tqdm
 
 from Conn import conn_mtg
@@ -21,7 +22,6 @@ for card_a in tqdm(df["name"]):
         if card_a < card_b and Levenshtein.distance(card_a, card_b) == 1:
             matches.append([card_a, card_b])
 
-for i in matches:
-    print(i)
+df = pd.DataFrame(matches, columns=["card_a", "card_b"])
 
-print(len(matches))
+df.to_markdown("result.md")

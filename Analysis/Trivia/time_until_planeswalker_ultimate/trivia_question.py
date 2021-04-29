@@ -52,13 +52,9 @@ df["ultimate_cost"] = df.apply(lambda row: row["ability_costs"][-1] if row["has_
 df["max_uptick"] = df["ability_costs"].apply(lambda x: max(i for i in x if i) if len([i for i in x if i]) > 0 else None)
 df["turns_to_ultimate"] = np.ceil((df["ultimate_cost"].abs() - df["loyalty"]) / df["max_uptick"]) + 1
 
-
-print(df.to_string())
-
-
 print("mean turns to ultimate:", df["turns_to_ultimate"].mean())
 print("median_turns_to_ultimate:", df["turns_to_ultimate"].median())
 
+df_planeswalker = df.groupby("subtypes")[["subtypes", "turns_to_ultimate"]].mean().sort_values("turns_to_ultimate")
 
-print(df.groupby("subtypes")[["subtypes", "turns_to_ultimate"]].mean().sort_values("turns_to_ultimate").to_string())
-# print(df.groupby("subtypes")[["subtypes", "turns_to_ultimate"]].median().sort_values("turns_to_ultimate").to_string())
+df_planeswalker.to_markdown("result.md")

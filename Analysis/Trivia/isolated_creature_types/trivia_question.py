@@ -47,4 +47,4 @@ DESC
 """
 df = pandasql.sqldf(query, locals())
 
-print(reddit_table_markdown(df, index=True))
+df.to_markdown("result.md")

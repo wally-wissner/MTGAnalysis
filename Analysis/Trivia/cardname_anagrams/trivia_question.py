@@ -2,6 +2,8 @@
 
 
 from collections import Counter
+
+import pandas as pd
 from tqdm import tqdm
 
 from Conn import conn_mtg
@@ -23,7 +25,6 @@ for card_a, counter_a in tqdm(card_counter):
         if card_a < card_b and counter_a == counter_b:
             matches.append([card_a, card_b])
 
-for i in matches:
-    print(i)
+df = pd.DataFrame(matches, columns=["card_a", "card_b"])
 
-print(len(matches))
+df.to_markdown("result.md")
