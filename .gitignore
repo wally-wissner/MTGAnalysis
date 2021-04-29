@@ -1,6 +1,7 @@
 .DS_Store
 **/__pycache__
 **/pipeline_cache
+**/venv
 *.idea
 *.pyc
 *.sqlite
