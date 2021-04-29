@@ -1,4 +1,4 @@
-# Question: How long, on average, do planeswalkers take to ultimate?
+# Question: How many turns, on average, do planeswalkers take to ultimate?
 
 
 import numpy as np
