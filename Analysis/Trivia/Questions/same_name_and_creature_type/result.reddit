@@ -1,50 +1,50 @@
-| | name | subtypes | same_order |
-|--|--|--|--|
-| 0 | Assembly-Worker | Assembly-Worker | True |
-| 1 | Atog | Atog | True |
-| 2 | Aurochs | Aurochs | True |
-| 3 | Brushwagg | Brushwagg | True |
-| 4 | Camel | Camel | True |
-| 5 | Centaur Archer | Centaur Archer | True |
-| 6 | Cockatrice | Cockatrice | True |
-| 7 | Dauthi Horror | Dauthi Horror | True |
-| 8 | Dauthi Jackal | Dauthi Jackal | True |
-| 9 | Dragon Egg | Dragon Egg | True |
-| 10 | Faerie Noble | Faerie Noble | True |
-| 11 | Fungus Elemental | Fungus Elemental | True |
-| 12 | Fungus Sliver | Fungus Sliver | True |
-| 13 | Goblin Assassin | Goblin Assassin | True |
-| 14 | Goblin Berserker | Goblin Berserker | True |
-| 15 | Goblin Mutant | Goblin Mutant | True |
-| 16 | Goblin Wizard | Goblin Wizard | True |
-| 17 | Homarid | Homarid | True |
-| 18 | Homarid Shaman | Homarid Shaman | True |
-| 19 | Homarid Warrior | Homarid Warrior | True |
-| 20 | Juggernaut | Juggernaut | True |
-| 21 | Kavu Scout | Kavu Scout | True |
-| 22 | Leviathan | Leviathan | True |
-| 23 | Lhurgoyf | Lhurgoyf | True |
-| 24 | Lizard Warrior | Lizard Warrior | True |
-| 25 | Masticore | Masticore | True |
-| 26 | Merfolk Assassin | Merfolk Assassin | True |
-| 27 | Metathran Soldier | Metathran Soldier | True |
-| 28 | Metathran Zombie | Metathran Zombie | True |
-| 29 | Minotaur Warrior | Minotaur Warrior | True |
-| 30 | Ogre Berserker | Ogre Berserker | True |
-| 31 | Ogre Shaman | Ogre Shaman | True |
-| 32 | Ogre Warrior | Ogre Warrior | True |
-| 33 | Orgg | Orgg | True |
-| 34 | Phelddagrif | Phelddagrif | True |
-| 35 | Plant Elemental | Plant Elemental | True |
-| 36 | Scarecrow | Scarecrow | True |
-| 37 | Shapeshifter | Shapeshifter | True |
-| 38 | Skeleton Archer | Skeleton Archer | True |
-| 39 | Sliver Construct | Sliver Construct | True |
-| 40 | Spike Drone | Spike Drone | True |
-| 41 | Spike Soldier | Spike Soldier | True |
-| 42 | Thrull Wizard | Thrull Wizard | True |
-| 43 | Vampire Noble | Vampire Noble | True |
-| 44 | Viashino Skeleton | Viashino Skeleton | True |
-| 45 | Viashino Warrior | Viashino Warrior | True |
-| 46 | Warrior Angel | Angel Warrior | False |
-| 47 | Zombie Assassin | Zombie Assassin | True |
+|       | name              | subtypes          | same_order   |
+|-------|-------------------|-------------------|--------------|
+|   555 | Assembly-Worker   | Assembly-Worker   | True         |
+|   566 | Atog              | Atog              | True         |
+|   604 | Aurochs           | Aurochs           | True         |
+|  1322 | Brushwagg         | Brushwagg         | True         |
+|  1404 | Camel             | Camel             | True         |
+|  1531 | Centaur Archer    | Centaur Archer    | True         |
+|  1785 | Cockatrice        | Cockatrice        | True         |
+|  2131 | Dauthi Horror     | Dauthi Horror     | True         |
+|  2132 | Dauthi Jackal     | Dauthi Jackal     | True         |
+|  2443 | Dragon Egg        | Dragon Egg        | True         |
+|  3041 | Faerie Noble      | Faerie Noble      | True         |
+|  3432 | Fungus Elemental  | Fungus Elemental  | True         |
+|  3433 | Fungus Sliver     | Fungus Sliver     | True         |
+|  3745 | Goblin Assassin   | Goblin Assassin   | True         |
+|  3751 | Goblin Berserker  | Goblin Berserker  | True         |
+|  3813 | Goblin Mutant     | Goblin Mutant     | True         |
+|  3860 | Goblin Wizard     | Goblin Wizard     | True         |
+|  4423 | Homarid           | Homarid           | True         |
+|  4425 | Homarid Shaman    | Homarid Shaman    | True         |
+|  4426 | Homarid Warrior   | Homarid Warrior   | True         |
+|  4872 | Juggernaut        | Juggernaut        | True         |
+|  4999 | Kavu Scout        | Kavu Scout        | True         |
+|  5460 | Leviathan         | Leviathan         | True         |
+|  5466 | Lhurgoyf          | Lhurgoyf          | True         |
+|  5549 | Lizard Warrior    | Lizard Warrior    | True         |
+|  5912 | Masticore         | Masticore         | True         |
+|  5985 | Merfolk Assassin  | Merfolk Assassin  | True         |
+|  6034 | Metathran Soldier | Metathran Soldier | True         |
+|  6036 | Metathran Zombie  | Metathran Zombie  | True         |
+|  6105 | Minotaur Warrior  | Minotaur Warrior  | True         |
+|  6712 | Ogre Berserker    | Ogre Berserker    | True         |
+|  6726 | Ogre Shaman       | Ogre Shaman       | True         |
+|  6730 | Ogre Warrior      | Ogre Warrior      | True         |
+|  6844 | Orgg              | Orgg              | True         |
+|  7055 | Phelddagrif       | Phelddagrif       | True         |
+|  7170 | Plant Elemental   | Plant Elemental   | True         |
+|  8138 | Scarecrow         | Scarecrow         | True         |
+|  8431 | Shapeshifter      | Shapeshifter      | True         |
+|  8686 | Skeleton Archer   | Skeleton Archer   | True         |
+|  8844 | Sliver Construct  | Sliver Construct  | True         |
+|  9083 | Spike Drone       | Spike Drone       | True         |
+|  9088 | Spike Soldier     | Spike Soldier     | True         |
+|  9876 | Thrull Wizard     | Thrull Wizard     | True         |
+| 10332 | Vampire Noble     | Vampire Noble     | True         |
+| 10471 | Viashino Skeleton | Viashino Skeleton | True         |
+| 10475 | Viashino Warrior  | Viashino Warrior  | True         |
+| 10783 | Warrior Angel     | Angel Warrior     | False        |
+| 11238 | Zombie Assassin   | Zombie Assassin   | True         |
