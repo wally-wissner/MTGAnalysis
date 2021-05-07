@@ -1,5 +1,8 @@
-def reddit_table_markdown(df, index=True) -> str:
-    markdown_rows = []
+import pandas as pd
+
+
+def reddit_table_markdown(df: pd.DataFrame, index=True) -> str:
+    markdown_rows = list()
     markdown_rows.append(f"| {' | '.join(str(col) for col in df.columns)} |\n")
     markdown_rows.append(f"{'--'.join('|' for _ in range(df.shape[1]+1))}\n")
     for _, row in df.iterrows():
@@ -16,3 +19,8 @@ def reddit_table_markdown(df, index=True) -> str:
 
     markdown = "".join(markdown_rows)
     return markdown
+
+
+def to_reddit_markdown(df: pd.DataFrame, filename: str, *args, **kwargs) -> None:
+    with open(filename, "w+") as f:
+        f.write(reddit_table_markdown(df, *args, **kwargs))

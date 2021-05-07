@@ -5,6 +5,7 @@ import numpy as np
 import re
 
 from Conn import conn_mtg
+from Utilities.reddit_markdown import to_reddit_markdown
 
 
 query = """
@@ -58,3 +59,4 @@ print("median_turns_to_ultimate:", df["turns_to_ultimate"].median())
 df_planeswalker = df.groupby("subtypes")[["subtypes", "turns_to_ultimate"]].mean().sort_values("turns_to_ultimate")
 
 df_planeswalker.to_markdown("result.md")
+to_reddit_markdown(df_planeswalker, "result.reddit")

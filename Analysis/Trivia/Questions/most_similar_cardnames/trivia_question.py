@@ -6,6 +6,7 @@ import pandas as pd
 from tqdm import tqdm
 
 from Conn import conn_mtg
+from Utilities.reddit_markdown import to_reddit_markdown
 
 
 query = """
@@ -25,3 +26,4 @@ for card_a in tqdm(df["name"]):
 df = pd.DataFrame(matches, columns=["card_a", "card_b"])
 
 df.to_markdown("result.md")
+to_reddit_markdown(df, "result.reddit")

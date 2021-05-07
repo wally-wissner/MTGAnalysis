@@ -2,7 +2,7 @@
 
 
 from Conn import conn_mtg
-from Utilities.reddit_markdown import reddit_table_markdown
+from Utilities.reddit_markdown import to_reddit_markdown
 
 
 query = """
@@ -39,3 +39,4 @@ print(df.shape)
 print(df[~df["same_order"]].shape)
 
 df.to_markdown("result.md")
+to_reddit_markdown(df, "result.reddit")

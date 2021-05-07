@@ -4,7 +4,7 @@
 import pandasql
 
 from Conn import conn_mtg
-from Utilities.reddit_markdown import reddit_table_markdown
+from Utilities.reddit_markdown import to_reddit_markdown
 
 
 query = """
@@ -50,3 +50,4 @@ df_vanilla = pandasql.sqldf(query=query_vanilla, env=locals())
 df_vanilla["frac_vanilla"] = df_vanilla["frac_vanilla"].round(4)
 
 df_vanilla.to_markdown("result.md")
+to_reddit_markdown(df_vanilla, "result.reddit")

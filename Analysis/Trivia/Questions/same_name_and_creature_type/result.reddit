@@ -1,0 +1,50 @@
+| | name | subtypes | same_order |
+|--|--|--|--|
+| 0 | Assembly-Worker | Assembly-Worker | True |
+| 1 | Atog | Atog | True |
+| 2 | Aurochs | Aurochs | True |
+| 3 | Brushwagg | Brushwagg | True |
+| 4 | Camel | Camel | True |
+| 5 | Centaur Archer | Centaur Archer | True |
+| 6 | Cockatrice | Cockatrice | True |
+| 7 | Dauthi Horror | Dauthi Horror | True |
+| 8 | Dauthi Jackal | Dauthi Jackal | True |
+| 9 | Dragon Egg | Dragon Egg | True |
+| 10 | Faerie Noble | Faerie Noble | True |
+| 11 | Fungus Elemental | Fungus Elemental | True |
+| 12 | Fungus Sliver | Fungus Sliver | True |
+| 13 | Goblin Assassin | Goblin Assassin | True |
+| 14 | Goblin Berserker | Goblin Berserker | True |
+| 15 | Goblin Mutant | Goblin Mutant | True |
+| 16 | Goblin Wizard | Goblin Wizard | True |
+| 17 | Homarid | Homarid | True |
+| 18 | Homarid Shaman | Homarid Shaman | True |
+| 19 | Homarid Warrior | Homarid Warrior | True |
+| 20 | Juggernaut | Juggernaut | True |
+| 21 | Kavu Scout | Kavu Scout | True |
+| 22 | Leviathan | Leviathan | True |
+| 23 | Lhurgoyf | Lhurgoyf | True |
+| 24 | Lizard Warrior | Lizard Warrior | True |
+| 25 | Masticore | Masticore | True |
+| 26 | Merfolk Assassin | Merfolk Assassin | True |
+| 27 | Metathran Soldier | Metathran Soldier | True |
+| 28 | Metathran Zombie | Metathran Zombie | True |
+| 29 | Minotaur Warrior | Minotaur Warrior | True |
+| 30 | Ogre Berserker | Ogre Berserker | True |
+| 31 | Ogre Shaman | Ogre Shaman | True |
+| 32 | Ogre Warrior | Ogre Warrior | True |
+| 33 | Orgg | Orgg | True |
+| 34 | Phelddagrif | Phelddagrif | True |
+| 35 | Plant Elemental | Plant Elemental | True |
+| 36 | Scarecrow | Scarecrow | True |
+| 37 | Shapeshifter | Shapeshifter | True |
+| 38 | Skeleton Archer | Skeleton Archer | True |
+| 39 | Sliver Construct | Sliver Construct | True |
+| 40 | Spike Drone | Spike Drone | True |
+| 41 | Spike Soldier | Spike Soldier | True |
+| 42 | Thrull Wizard | Thrull Wizard | True |
+| 43 | Vampire Noble | Vampire Noble | True |
+| 44 | Viashino Skeleton | Viashino Skeleton | True |
+| 45 | Viashino Warrior | Viashino Warrior | True |
+| 46 | Warrior Angel | Angel Warrior | False |
+| 47 | Zombie Assassin | Zombie Assassin | True |

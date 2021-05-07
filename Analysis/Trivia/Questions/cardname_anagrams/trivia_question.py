@@ -1,12 +1,12 @@
 # Question: What card names are anagrams of other card names?
 
 
-from collections import Counter
-
 import pandas as pd
+from collections import Counter
 from tqdm import tqdm
 
 from Conn import conn_mtg
+from Utilities.reddit_markdown import to_reddit_markdown
 
 
 query = """
@@ -28,3 +28,4 @@ for card_a, counter_a in tqdm(card_counter):
 df = pd.DataFrame(matches, columns=["card_a", "card_b"])
 
 df.to_markdown("result.md")
+to_reddit_markdown(df, "result.reddit")
