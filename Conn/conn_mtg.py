@@ -20,7 +20,7 @@ def open_query(path):
 
 
 if __name__ == "__main__":
-    # q = open_query("../Queries/cards.sql")
+    # q = open_query("../Queries/sets.sql")
     # df = request(q)
     # print(df.head().to_string())
     # print(df.columns)
@@ -71,9 +71,9 @@ if __name__ == "__main__":
         AND cards.side IS NULL
         -- No lands.
         AND cards.types NOT LIKE "%Land%"
-        AND cards.name = "Aboroth"
+        AND cards.name IN ("Eldrazi Displacer", "Figure of Destiny")
     GROUP BY
         cards.name
     """
     df = request(q)
-    print(df)
+    print(df.to_string())
